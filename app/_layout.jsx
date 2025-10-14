@@ -3,10 +3,11 @@ import React from "react";
 import { Slot, Stack } from "expo-router";
 import { Colors } from "../constants/Colors";
 import { StatusBar } from "react-native";
+import { UserProvider } from "../contexts/UserContext";
 
 const RootLayout = () => {
   return (
-    <>
+    <UserProvider>
       <StatusBar style="auto" />
       <Stack
         screenOptions={{
@@ -18,7 +19,7 @@ const RootLayout = () => {
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="(dashboard)" options={{ headerShown: false }} />
       </Stack>
-    </>
+    </UserProvider>
   );
 };
 
